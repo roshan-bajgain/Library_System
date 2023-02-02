@@ -2,12 +2,24 @@
 #include<conic.h>
 
 //This is the book structure
-typedef struct Book
+void addstudent();
+void studentrecord();
+void searchstudent();
+void delete();
+
+struct student
 {
-    char title[20];
+    /* data */
     char Name[20];
-    int page;
-    float price;
-}Book;
+    int roll_no;
+    int class[10];
+    char vill[20];
+    float per;
+};
+
+void main() {
+    
+}
+
 
 
