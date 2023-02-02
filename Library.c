@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conic.h>
 
 //This is the book structure
 void addstudent();
@@ -28,8 +27,8 @@ void main() {
         printf("\t\t\t\t 4. Delete Record\n");
         printf("\t\t\t\t 5. Exist\n");
         printf("\t\t\t\t_____________________________________\n");
-        printf("\t\t\t\t  ")
-        scanf("%d", &choice)
+        printf("\t\t\t\t  ");
+        scanf("%d", &choice);
     }
     
 }
