@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<string.h>
 
 struct books
 {
@@ -35,38 +36,23 @@ int main () {
         printf("4. Issued Book \n");
         printf("5. List Issued book \n");
         printf("0. Exit \n\n");
-        printf("Enter your choice");
+        printf("Enter your choice: ");
         scanf("%d", &ch);
 
         switch (ch)
         {
-        case 0;
-            /* code */
-            exit(0);
-        case 1: 
-          addBook();
-          break;
+           case 0:
+             exit(0);
 
-        case 2:
-          bookslist();
-          break;
+          case 1: 
+            addBook();
+            break;
 
-        case 3:
-          del();
-          break;  
-
-        case 4;
-          issueBook();
-          break;
-
-        case 5;
-          issueList();
-          break;
-        
-        default:
-          printf("Invalid choice... \n\n");
+          default:
+            printf("Invalid choice... \n\n");
         }
-          printf("Predd any key to continue...");
+            printf("Press any key to continue...");
+            getch();
     }
     return 0;
 }
@@ -96,12 +82,3 @@ void addBook() {
     fwrite(&b, sizeof(b),1,fp);
     fclose(fp);
 }
-
-
-
-
-
-
-
-
-
