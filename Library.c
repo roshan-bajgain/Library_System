@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
@@ -61,7 +62,7 @@ int main () {
         printf("3. Remove Book \n");
         printf("4. Issued Book \n");
         printf("5. List Issued book \n");
-        printf("6. Exit \n\n");
+        printf("0. Exit \n\n");
         printf("Enter your choice: ");
         scanf("%d", &ch);
 
