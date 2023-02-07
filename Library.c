@@ -23,40 +23,6 @@ struct student
 
 FILE *fp;
 
-int main () {
-    int ch;
-    while (1)
-    {
-        /* code */
-        system("cls");
-        printf("<=== Library Management System ===>");
-        printf("1. Add Book \n");
-        printf("2. Books list \n");
-        printf("3. Remove Book \n");
-        printf("4. Issued Book \n");
-        printf("5. List Issued book \n");
-        printf("0. Exit \n\n");
-        printf("Enter your choice: ");
-        scanf("%d", &ch);
-
-        switch (ch)
-        {
-           case 0:
-             exit(0);
-
-          case 1: 
-            addBook();
-            break;
-
-          default:
-            printf("Invalid choice... \n\n");
-        }
-            printf("Press any key to continue...");
-            getch();
-    }
-    return 0;
-}
-
 void addBook() {
     char myDate[12];
     time_t t = time(NULL);
@@ -82,3 +48,38 @@ void addBook() {
     fwrite(&b, sizeof(b),1,fp);
     fclose(fp);
 }
+
+int main () {
+    int ch;
+    while (1)
+    {
+        /* code */
+        system("cls");
+        printf("<=== Library Management System ===>\n");
+        printf("1. Add Book \n");
+        printf("2. Books list \n");
+        printf("3. Remove Book \n");
+        printf("4. Issued Book \n");
+        printf("5. List Issued book \n");
+        printf("6. Exit \n\n");
+        printf("Enter your choice: ");
+        scanf("%d", &ch);
+
+        switch (ch)
+        {
+           case 0:
+             exit(0);
+
+          case 1: 
+            addBook();
+            break;
+
+          default:
+            printf("Invalid choice... \n\n");
+        }
+            printf("Press any key to continue...");
+            getch();
+    }
+    return 0;
+}
+
