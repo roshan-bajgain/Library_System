@@ -50,6 +50,19 @@ void addBook() {
     fclose(fp);
 }
 
+void bookList() {
+    system("cls");
+    printf("<== Avaialable Book ==>");
+    printf("%-10s %-30s %20s %s", "Book Id","Book Name", "Author","Date");
+    fp = fopen("books.txt","rb");
+    while (fread(&b,sizeof(b),1,fp)== 1)
+    {
+        printf("%-10d %-30s %-20s %s\n\n",b.id,b.bookName,b.authorName,b.date);
+    }
+    fclose(fp);
+    
+}
+
 int main () {
     int ch;
     while (1)
