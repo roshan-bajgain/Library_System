@@ -52,8 +52,8 @@ void addBook() {
 
 void booksList() {
     system("cls");
-    printf("<== Avaialable Book ==>\n");
-    printf("%-10s %-30s %20s %s\n\n", "Book id","Book Name", "Author","Date");
+    printf("\t\t\t\t\t\t\t\t<== Avaialable Book ==>\n\n");
+    printf("%-10s %-30s %s\t\t\t\t\t\t %s\t\t\t\n", "Book id","Book Name", "Author", "Date");
     fp = fopen("books.txt","rb");
     while (fread(&b,sizeof(b),1,fp)== 1)
     {
@@ -61,6 +61,34 @@ void booksList() {
     }
     fclose(fp);
     
+}
+
+void del() {
+    int id, f=0;
+    system("cls");
+    printf("<== Remove Books ==>\n\n");
+    printf("Enter book id to remove");
+    scanf("%d", id);
+    FILE *ft;
+    fp= fopen("books.txt","rb");
+    ft = fopen("temp.txt","wb");
+    
+    while(fread(&b,sizeof(b),1,fp) == 1) {
+        if (id == b.id) {
+            f = 1;
+        } else {
+            fwrite(&b,sizeof(b),1,ft);
+        }
+    }
+    if(f==1) {
+        printf("\n\n Delete Successfully");
+    } else {
+        printf("\n\n Record not found");
+    }
+    fclose(fp);
+    fclose(ft);
+    remove("books.txt");
+    rename("temp.txt","books.txt");
 }
 
 int main () {
